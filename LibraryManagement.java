@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class LibraryManagement {
 
     static final String URL =
-    "jdbc:oracle:thin:@//localhost:1521/FREEPDB1";
+    "jdbc:oracle:thin:@//localhost:1521/FREEPDB1    ";
     static final String USER = "SYSTEM";
     static final String PASSWORD = "Yuri@2006";
 
