@@ -1,0 +1,84 @@
+LIBRARY MANAGEMENT SYSTEM USING JAVA JDBC AND ORACLE DATABASE
+
+1. INTRODUCTION
+
+This project is a menu-driven Library Management System developed using Java, JDBC, and Oracle Database. It allows users to add books, search for books by title or author, issue books to students, return books, and display book records.
+
+2. SOFTWARE REQUIREMENTS
+
+- Java JDK
+- Oracle Database 26ai Free
+- Oracle JDBC Thin Driver (ojdbc10.jar)
+- Visual Studio Code
+- Command Prompt or PowerShell
+
+3. JDBC CONNECTION SETUP
+
+Step 1: Install Java and Oracle Database.
+
+Step 2: Start the Oracle database and ensure the FREEPDB1 service is available.
+
+Step 3: Check the Oracle listener using:
+
+    lsnrctl status
+
+Step 4: Place the Oracle JDBC driver file, ojdbc10.jar, inside the lib folder.
+
+Step 5: Configure the JDBC connection URL in the Java program:
+
+    jdbc:oracle:thin:@//localhost:1521/FREEPDB1
+
+Step 6: Provide a valid Oracle database username and password.
+
+Step 7: Establish the connection using DriverManager:
+
+    Connection con = DriverManager.getConnection(url, username, password);
+
+4. HOW JDBC IS USED
+
+- Connection: Establishes communication between the Java application and Oracle Database.
+- Statement: Executes SQL statements.
+- PreparedStatement: Executes parameterized SQL queries safely.
+- ResultSet: Retrieves and processes records returned by SELECT queries.
+- INSERT: Adds new book records.
+- SELECT: Searches for books and displays records.
+- UPDATE: Changes available copies when books are issued or returned.
+
+5. APPLICATION FEATURES
+
+1. Add Book: Stores the title, author, total copies, and available copies.
+2. Search Book: Searches for books by title or author.
+3. Issue Book: Records a book issued to a student and decreases available copies.
+4. Return Book: Records a return and increases available copies.
+5. Display Books: Displays book details and copy availability in tabular form.
+6. Exit: Closes the application.
+
+6. HOW TO COMPILE AND RUN
+
+Open the terminal in the project directory:
+
+    cd C:\oracleJDBC
+
+Compile the application:
+
+    javac -cp ".;lib/ojdbc10.jar" LibraryManagement.java
+
+Run the application:
+
+    java -cp ".;lib/ojdbc10.jar" LibraryManagement
+
+Ensure the Oracle database is running before executing the program.
+
+7. JDBC WORKFLOW
+
+1. Establish a database connection.
+2. Create a Statement or PreparedStatement.
+3. Execute SQL commands.
+4. Process query results using ResultSet.
+5. Update the database when books are issued or returned.
+6. Close database resources.
+
+8. CONCLUSION
+
+This project demonstrates how JDBC connects a Java application to Oracle Database and performs database operations. It provides practical experience with SQL queries, database connectivity, record management, and exception handling.
+NOTE: Database credentials must be kept private and should not be uploaded to GitHub.
